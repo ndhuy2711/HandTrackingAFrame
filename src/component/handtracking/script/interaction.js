@@ -52,7 +52,7 @@ AFRAME.registerComponent('hand-tracking', {
                         let distanceTwoHand2 = arrHand[1].detail.position.distanceTo(arrHand[0].detail.position);
                         // const minMoveDistance = 0.01;
                         if ((distanceTwoHand1 > minMoveDistance || distanceTwoHand2 > minMoveDistance) && minMoveDistance !== 0) {
-                            const scaleFactor = 0.2;
+                            const scaleFactor = 0.01;
                             const currentScale = ultrasound.getAttribute('scale');
                             const newScale = {
                                 x: currentScale.x + (distanceTwoHand1 + distanceTwoHand2) * scaleFactor,
@@ -63,7 +63,7 @@ AFRAME.registerComponent('hand-tracking', {
                             // Cập nhật vị trí ban đầu của hai tay
                             minMoveDistance = arrHand[0].detail.position.distanceTo(arrHand[1].detail.position);
                         } else if ((distanceTwoHand1 < minMoveDistance || distanceTwoHand2 < minMoveDistance) && minMoveDistance !== 0) {
-                            const scaleFactor = 0.2;
+                            const scaleFactor = 0.01;
                             const currentScale = ultrasound.getAttribute('scale');
                             const newScale = {
                                 x: currentScale.x - minMoveDistance * scaleFactor,
