@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import 'aframe'
+import "./style.css"
+import { Handtracking } from './component/handtracking';
+import { Ultrasound } from './component/model3D/utrasound';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <a-scene hand-tracking>
+      <Handtracking />
+      <Ultrasound />
+    </a-scene>
   );
 }
 
